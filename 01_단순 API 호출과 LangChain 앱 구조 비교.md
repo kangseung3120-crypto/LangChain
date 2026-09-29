@@ -372,6 +372,45 @@ def print_comparison(direct_answer: str, langchain_answer: str) -> None:
     print("- LangChain: Prompt, Model, Parser가 각자 한 가지 역할을 담당합니다.")
 
 
+def main() -> None:
+    """환경변수를 읽고 실제 API로 두 방식을 한 번씩 실행합니다."""
+
+    # 실습 파일과 같은 폴더 또는 상위 폴더의 .env 파일을 읽습니다.
+    load_dotenv()
+
+    # API Key는 코드에 직접 쓰지 않고 환경변수에서 읽습니다.
+    api_key = os.getenv("OPENAI_API_KEY")
+
+    # 모델명도 환경변수로 바꿀 수 있게 하되, 기본값은 저비용 모델로 둡니다.
+    model_name = os.getenv("OPENAI_MODEL", DEFAULT_MODEL)
+
+    # 키가 없으면 긴 오류 대신 다음에 해야 할 일을 알려 주고 종료합니다.
+    if not api_key:
+        print("OPENAI_API_KEY가 없습니다.")
+        print("1-2강의 안내에 따라 .env 파일을 만든 뒤 다시 실행해 주세요.")
+        return
+
+    # 직접 호출 방식에서 사용할 공식 OpenAI SDK 클라이언트를 만듭니다.
+    openai_client = OpenAI(api_key=api_key)
+
+    # LangChain 방식에서 사용할 OpenAI ChatModel 객체를 만듭니다.
+    langchain_model = ChatOpenAI(model=model_name, api_key=api_key)
+
+    # 같은 질문을 OpenAI SDK 방식으로 한 번 호출합니다.
+    direct_answer = call_with_openai_sdk(openai_client, model_name, QUESTION)
+
+    # 같은 질문을 LangChain의 Prompt, Model, Parser 단계로 한 번 호출합니다.
+    langchain_answer = call_with_langchain(langchain_model, QUESTION)
+
+    # 두 결과와 구조상 차이를 한 화면에 출력합니다.
+    print_comparison(direct_answer, langchain_answer)
+
+
+if __name__ == "__main__":
+    # 이 파일을 직접 실행했을 때만 실제 API 호출을 시작합니다.
+    main()
+
+
 ### 6.2 API 호출 횟수
 
 이 실습은 같은 질문을 두 방식으로 비교하기 때문에 실행할 때 모델을 두 번 호출합니다. 반복 실행이 필요하지 않다면 결과를 확인한 뒤 바로 종료하세요.
