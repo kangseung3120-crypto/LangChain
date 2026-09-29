@@ -10,4 +10,3 @@ LangChain은 모델을 대신하는 또 다른 AI가 아닙니다. **LLM 애플�
 
 직접 OpenAI API 호출과 LangChain 방식 비교
 
-![alt text](image.png)
