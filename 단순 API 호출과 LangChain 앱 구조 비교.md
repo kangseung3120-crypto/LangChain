@@ -10,7 +10,7 @@ LangChain은 모델을 대신하는 또 다른 AI가 아닙니다. **LLM 애플�
 
 직접 OpenAI API 호출과 LangChain 방식 비교
 
-![alt text](image.png)
+![alt text](images/image.png)
 
 💡 LangChain을 사용한다고 같은 모델의 지식이나 답변 능력이 자동으로 좋아지지는 않습니다. 달라지는 것은 모델 자체가 아니라 애플리케이션 코드를 구성하는 방식입니다.
 
@@ -103,7 +103,7 @@ LangChain은 앞에서 한 작업을 `Prompt`, `Model`, `Parser` 세 단계로 �
 
 Prompt, Model, Parser의 기본 흐름
 
-![alt text](image-1.png)
+![alt text](images/image-1.png)
 
 ### 3.1 Prompt
 
@@ -380,7 +380,7 @@ def print_comparison(direct_answer: str, langchain_answer: str) -> None:
 
 직접 호출과 LangChain의 선택 기준
 
-![alt text](image-2.png)
+![alt text](images/image-2.png)
 
 ### 직접 호출이 잘 맞는 경우
 
