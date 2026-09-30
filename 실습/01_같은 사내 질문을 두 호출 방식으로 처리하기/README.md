@@ -52,3 +52,15 @@
 `check_answers(direct_answer, chain_answer)`에서 두 값이 모두 문자열이고 공백만 있는 값이 아닌지 검사하세요. 조건을 만족하지 않으면 `ValueError`를 발생시킵니다. 정상일 때는 원문을 수정하지 않고 `{"direct": ..., "langchain": ...}` 형태로 반환합니다.
 
 답변 두 개가 같은 문장인지 비교하는 조건은 넣지 마세요. 모델 호출은 정상 경로에서 총 두 번이며, 나머지는 환경 확인과 Python 객체 처리입니다.
+
+# 실행결과
+
+langchain-core: 1.5.1
+langchain-openai: 1.4.1
+openai: 2.48.0
+python-dotenv: 1.2.2
+모델: gpt-5.6-luna
+Model 결과가 AIMessage인가: True
+[direct] 프로그램을 다시 실행하세요. 그래도 계속 실패하면 IT지원팀에 문의하세요.
+[langchain] 프로그램을 다시 실행하세요. 그래도 계속 실패하면 IT지원팀에 문의하세요.
+답변 문자열 확인: True
