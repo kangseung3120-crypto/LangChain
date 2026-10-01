@@ -39,7 +39,7 @@ def make_messages(document, audience):
         audience=audience,
     )
 
-    json_format = json_parser.get_formet_instructions() 
+    json_format = json_parser.get_format_instructions() 
     list_format = list_parser.get_format_instructions() 
 
     messages = chat_template.format_messages(
