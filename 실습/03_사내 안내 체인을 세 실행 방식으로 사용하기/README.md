@@ -50,19 +50,6 @@ Prompt를 함께 반환하는 것은 입력 변수와 중간 결과를 확인하
 입력 점검: document와 question 키가 있는 dict가 필요합니다.
 Prompt 결과: ChatPromptValue
 Model은 AIMessage / Parser는 문자열: True True
-Traceback (most recent call last):
-  File "C:\Users\rkdtm\Desktop\LLM\LangChain\실습\03_사내 안내 체인을 세 실행 방식으로 사용하기\실습.py", line 90, in <module>
-    main()
-  File "C:\Users\rkdtm\Desktop\LLM\LangChain\실습\03_사내 안내 체인을 세 실행 방식으로 사용하기\실습.py", line 78, in main
-    single, results = run_single_and_batch(chain, INPUTS)
-                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\rkdtm\Desktop\LLM\LangChain\실습\03_사내 안내 체인을 세 실행 방식으로 사용하기\실습.py", line 40, in run_single_and_batch
-    results = chain.invoke_batch(inputs)
-              ^^^^^^^^^^^^^^^^^^
-  File "C:\Users\rkdtm\Desktop\LLM\LangChain\실습\03_사내 안내 체인을 세 실행 방식으로 사용하기\.venv\Lib\site-packages\pydantic\main.py", line 1042, in __getattr__
-    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
-AttributeError: 'RunnableSequence' object has no attribute 'invoke_batch'
-PS C:\Users\rkdtm\Desktop\LLM\LangChain\실습\03_사내 안내 체인을 세 실행 방식으로 사용하기> uv run python 실습.py
 체인 종류: RunnableSequence
 입력 점검: document와 question 키가 있는 dict가 필요합니다.
 Prompt 결과: ChatPromptValue
